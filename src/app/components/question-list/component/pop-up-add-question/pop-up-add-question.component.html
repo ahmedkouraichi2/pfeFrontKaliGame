@@ -1,0 +1,51 @@
+<button mat-button (click)="onNoClick()" style="left: 640px">
+  <i class="glyphicon glyphicon-remove"></i>
+</button>
+<h2 style="text-align: center; color: cadetblue">Ajout d'une question</h2>
+<br /><br /><br /><br />
+<mat-form-field style="width: 100%" appearance="fill">
+  <mat-label>Question</mat-label>
+  <input matInput style="font-size: 15px" [(ngModel)]="this.question.question" />
+</mat-form-field>
+<legend>Options</legend>
+<mat-form-field style="width: 100%" appearance="fill">
+  <mat-label>Option</mat-label>
+  <input matInput style="font-size: 15px" [(ngModel)]="option" />
+</mat-form-field>
+
+<button
+  type="button"
+  style="float: left; border-color: aliceblue"
+  *ngIf="option != null || option != ''"
+  class="btn btn-primary"
+  (click)="saveChoix()"
+  [disabled]="option == null || option == ''"
+>
+  <i class="glyphicon glyphicon-ok"></i>
+</button>
+<br /><br /><br />
+<fieldset *ngIf="this.question.choix.length > 0">
+  <legend style="text-align: center">Liste des options</legend>
+  <div style="margin-left: 27%">
+    <div *ngFor="let choix of question.choix; let index = index">
+      <span>
+        <input type="checkbox" id="{{ index }}" name="option{{ index }}" (change)="checkCheckBoxvalue($event, index)" />
+        <label style="min-width: 300px !important; font-size: 12px" for="{{ index }}">{{ choix.description }}</label>
+      </span>
+      <button type="button" class="btn btn-danger px-3" (click)="delete(index)" style="margin-left: 12px">
+        <i class="glyphicon glyphicon glyphicon glyphicon-remove"></i>
+      </button>
+    </div>
+  </div>
+</fieldset>
+
+<br /><br /><br /><br />
+<button
+  type="button"
+  style="margin-bottom: 10px; margin-left: 550px; border-color: aliceblue"
+  class="btn btn-primary"
+  [disabled]="this.question.choix.length < 2 && this.question != null && !checkResp()"
+  (click)="save()"
+>
+  Enregistrer
+</button>

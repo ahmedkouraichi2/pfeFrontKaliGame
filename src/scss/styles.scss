@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+:root {
+  --menu-color: #069fa9;
+  --menu-color-hover: rgba(82, 76, 97, 0.7);
+  --menu-text-color: white;
+  --menu-icon-height: 35px;
+  --menu-full-width: 160px;
+  --menu-min-width: 70px;
+  --follow-border: 1px solid #524c61;
+  --follow-item-height: 47px;
+  --menu-transition: 0.2s linear;
+}
+
+h1 {
+  font-size: 1.7em;
+  font-weight: 500;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #524c61;
+}
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: #524c61;
+}
+
+.follow-pointer {
+  cursor: pointer;
+}
+
+.snackBar-message-success {
+  background: #4caf50;
+  color: white;
+  .mat-simple-snackbar-action {
+    color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+.snackBar-message-error {
+  background: #f44336;
+  color: white;
+  .mat-simple-snackbar-action {
+    color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+.buttonUpdate {
+  background-color: var(--menu-color) !important;
+}
+
+.tooltip {
+  background-color: #6d667e;
+  font-size: 15px;
+}
+
+.cdk-overlay-container {
+  z-index: 500 !important;
+}
+
+.app-filter-dialog .mat-dialog-container {
+  padding: 0;
+}
+
+.follow-padding-bottom-container {
+  mat-dialog-container {
+    padding-bottom: 10px;
+  }
+}

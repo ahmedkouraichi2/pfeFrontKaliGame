@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <form>
+    <div class="grid-container">
+      <mat-grid-list cols="2" rowHeight="350px">
+        <mat-grid-tile [colspan]="1" [rowspan]="2">
+          <mat-card class="card" id="card1">
+            <div class="card-header">
+              <div class="container-img-texte">
+                <p class="img-texte">
+                  <!-- <img src="../assets/coding.JPG" id="img" /> -->
+                  <b id="b"
+                    >Bonjour,vous avez<br />
+                    été invité(e) a <br />passer un test</b
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="div1">
+                <span>
+                  Vous devez effectuer cette évaluation sans l'aide d'une tierce personne.Vous pouvvez utilisez votre
+                  environnement de développement préféré pour préparer vos réponses.<br />Un tutorial et une aide sont a
+                  votre disposition pour vous permettre de vous familiariser avec l'application dans les meilleurs
+                  conditions.
+                </span>
+              </div>
+            </div>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-card class="card" id="card2">
+            <div id="tuto">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <h2><b id="bb">Tutorial</b></h2>
+            </div>
+            <span>
+              Voici un tutorial qui vous permet de découvrir votre environnement d'évaluation en vous familiarisant avec
+              les foctionnalités de l'application en toute tranquillité.<b
+                >Le résultat de ce tutoriel ne fait pas partie de l'évaluation.</b
+              >Vous avez la possibilité de recommencer ce tutoriel autant de fois que vous le souhaitez </span
+            ><br />
+            <button class="button1" (click)="submit()">DEMARRER LE TUTORIEL</button>
+          </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-card class="card" id="card3">
+            <div id="div3">
+              <i class="fas fa-tasks"></i>
+              <h2><b id="bbb">Test</b></h2>
+            </div>
+            <span>
+              Ce test est composé de <b>30 questions</b>.Chaque question est chronométrée a 60 secondes .La durée totale
+              est 30 minutes .Merci de <b>prévoir 30 minutes consécutives</b>pour faire ce test
+            </span>
+            <br />
+            <button class="button" (click)="submit()">DEMARRER LE TEST</button>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </form>
+</html>

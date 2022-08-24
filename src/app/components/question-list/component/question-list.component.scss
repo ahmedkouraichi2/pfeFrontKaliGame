@@ -1,0 +1,39 @@
+#cont {
+  text-align: center;
+  width: 85%;
+}
+#all {
+  margin-top: 2%;
+  margin-left: 10%;
+}
+
+.mat-column-name {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 17% !important;
+  width: 85% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  word-break: break-word;
+
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+.glyphicon {
+  font-size: 15px;
+}
+.mat-row .mat-cell {
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: aliceblue;
+  background-color: aliceblue;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

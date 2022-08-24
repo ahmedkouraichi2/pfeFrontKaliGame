@@ -1,0 +1,17 @@
+<h1 mat-dialog-title style="font-size: 20px">Confirmation</h1>
+<br />
+<div mat-dialog-content style="text-align: centre">Êtes-vous sûr de vouloir supprimer?</div>
+<br />
+<div mat-dialog-actions style="margin-left: 380px">
+  <button mat-button mat-dialog-close (click)="onNoClick()" class="btn btn-primary px-3">Annuler</button>
+  <button
+    mat-button
+    mat-dialog-close
+    cdkFocusInitial
+    class="btn btn-danger px-3"
+    style="margin-left: 1%"
+    (click)="delete()"
+  >
+    Ok
+  </button>
+</div>

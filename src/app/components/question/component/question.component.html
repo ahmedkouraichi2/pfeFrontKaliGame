@@ -1,0 +1,82 @@
+<ng-container *ngIf="!isQuizCompleted">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card" id="firstCard">
+        <div class="card-header">
+          <div class="b">
+            <i class="fa fa-question-circle" id="ico"></i>
+            <b id="question"
+              >Question {{ currentQuestion + 1 }} / {{ questionsList.length }} -{{
+                questionsList[currentQuestion]?.language.name
+              }}</b
+            >
+            <i class="fas fa-history" id="ico2"></i>
+            Temps écoulé : <span>{{ counter }} /60</span>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <p>{{ questionsList[currentQuestion]?.question }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" id="secondCard">
+        <div class="card-header" id="head2">
+          <div id="a">
+            <i class="fas fa-code" id="f1"></i>
+            <b id="reponse">Réponse</b>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="card" class="card" style="width: 35rem">
+            <div
+              class="list-group list-group-flush"
+              *ngFor="let option of questionsList[currentQuestion]?.choix; let index = index"
+            >
+              <input
+                type="radio"
+                id="radioId"
+                (change)="answer(currentQuestion + 1, option)"
+                name="question"
+                id="rating_input{{ index }}"
+              />
+              <label for="rating_input{{ index }}">
+                {{ option.description }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <button class="button" (click)="nextQuestion()">
+          <p style="margin-right: 150px; margin-top: 10px">
+            Question suivante <i class="fas fa-chevron-circle-right" id="suivant"></i>
+          </p>
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="isQuizCompleted">
+  <div class="card text-center" style="height: 700px">
+    <div class="card-body" style="margin-top: 200px">
+      <i class="fa fa-check-circle" style="font-size: 25px; color: #069fa9; margin-right: 10px"></i>
+      <h1 style="margin-bottom: 10px">Merci d'avoir passé ce test !</h1>
+      <!-- <p>
+        <b>Total questions : {{ questionsList.length }}</b>
+      </p>
+      <p>
+        <b>Questions Correctes : {{ correctAnswer }}</b>
+      </p>
+      <p>
+        <b>Questions incorrectes : {{ wrongAnswer }}</b>
+      </p>
+      <p>
+        <b>Score : {{ points }} points</b>
+      </p> -->
+    </div>
+  </div>
+</ng-container>

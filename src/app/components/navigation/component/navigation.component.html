@@ -1,0 +1,72 @@
+<div class="follow-navigation-container">
+  <mat-sidenav-container class="follow-sidenav-container">
+    <mat-sidenav
+      mode="side"
+      opened
+      role="navigation"
+      class="follow-sidenav"
+      [ngClass]="fullDisplay ? '' : 'follow-sidenav-min'"
+    >
+      <mat-nav-list class="follow-sidenav-list" style="margin-bottom: 20px">
+        <div mat-list-item class="follow-logo" style="margin-bottom: 15px">
+          <ng-container *ngIf="fullDisplay">
+            <img src="../assets/logo.png" alt="logo" />
+          </ng-container>
+          <ng-container *ngIf="!fullDisplay">
+            <img src="../assets/logo-min.png" alt="logo" />
+          </ng-container>
+        </div>
+
+        <a
+          mat-list-item
+          style="cursor: pointer; text-decoration: none; margin-top: 10px"
+          class="follow-sidenav-item"
+          (click)="goto(LINK_EMAIL)"
+          [ngClass]="activeLinks.activeMyDashboard ? 'follow-sidenav-item-active' : ''"
+        >
+          <div *ngIf="fullDisplay">
+            <i class="fas fa-caret-square-right"></i>
+            <span style="margin-top: 20px; margin-left: 5px"><b>Invite collaborateur</b></span>
+
+            <hr />
+          </div>
+        </a>
+
+        <a
+          mat-list-item
+          style="cursor: pointer; text-decoration: none"
+          class="follow-sidenav-item"
+          (click)="goto(LINK_QUESTION_LIST)"
+          [ngClass]="activeLinks.activeMyUser ? 'follow-sidenav-item-active' : ''"
+        >
+          <!-- <img src="../assets/client.png" class="follow-sidenav-icon" alt="client" /> -->
+          <div *ngIf="fullDisplay">
+            <i class="fa fa-question-circle"></i>
+            <span style="margin-top: 20px; margin-left: 5px"><b>Gestion Domaines</b></span>
+            <hr />
+          </div>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content
+      class="follow-sidenav-content"
+      [ngClass]="fullDisplay ? 'follow-sidenav-content-min' : 'follow-sidenav-content-max'"
+    >
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <div class="follow-sidenav-display" [ngClass]="fullDisplay ? 'follow-sidenav-full' : 'follow-sidenav-min'">
+    <button (click)="changeDisplay()" class="follow-sidenav-display-btn follow-pointer">
+      {{ fullDisplay ? '<<' : '>>' }}
+    </button>
+  </div>
+  <div class="follow-sidenav-version" [ngClass]="fullDisplay ? 'follow-sidenav-full' : 'follow-sidenav-min'">
+    <ng-container *ngIf="fullDisplay">
+      <span>version 1.0.0</span>
+    </ng-container>
+    <ng-container *ngIf="!fullDisplay">
+      <span>v1.0.0</span>
+    </ng-container>
+  </div>
+</div>

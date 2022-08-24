@@ -1,0 +1,61 @@
+.follow-logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  background: var(--menu-color);
+  height: var(--follow-item-height);
+  color: var(--menu-text-color);
+  border-top: none;
+  border-right: none;
+  border-left: var(--follow-border);
+  border-bottom: var(--follow-border);
+  border-bottom-left-radius: 6px;
+  z-index: 999;
+}
+.follow-logout:hover {
+  background: var(--menu-color-hover);
+  cursor: pointer;
+}
+.follow-logout:focus {
+  outline: none;
+}
+.follow-logout > * {
+  vertical-align: middle;
+  font-size: 14px;
+}
+.follow-logout-icon {
+  height: var(--menu-icon-height);
+}
+.follow-header {
+  background: #524c61;
+  height: 40px;
+  border-radius: 25px;
+  max-width: calc(100% - 150px);
+  margin-bottom: 20px;
+  margin-top: -15px;
+}
+.follow-header > h1 {
+  padding-left: 15px;
+  padding-top: 4px;
+  color: var(--menu-text-color);
+}
+@media (min-width: 560px) and (max-width: 660px) {
+  .follow-header {
+    height: 35px;
+  }
+  .follow-header > h1 {
+    font-size: 1em;
+    padding-top: 8px;
+  }
+}
+@media (max-width: 559px) {
+  .follow-header {
+    height: 30px;
+  }
+  .follow-header > h1 {
+    font-size: 0.7em;
+    padding-left: 10px;
+    padding-top: 8px;
+  }
+}

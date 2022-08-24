@@ -1,0 +1,45 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+<div class="card">
+  <div id="tab">
+    <h2>Nouvelle session</h2>
+
+    <table>
+      <tr>
+        <td>
+          <p><b>Email du candidat</b></p>
+        </td>
+        <td><input type="text" [(ngModel)]="details.email" name="email" /></td>
+      </tr>
+      <tr></tr>
+      <tr>
+        <td>
+          <p><b>Nom du candidat</b></p>
+        </td>
+        <td><input type="text" [(ngModel)]="details.name" name="name" /></td>
+      </tr>
+      <tr>
+        <td>
+          <p><b>Prénom du candidat</b></p>
+        </td>
+        <td><input type="text" [(ngModel)]="details.prenom" name="prenom" /></td>
+      </tr>
+      <tr>
+        <td>
+          <ng-multiselect-dropdown
+            [placeholder]="'Select Domaine(s)'"
+            [settings]="dropdownSettings"
+            [data]="quarterList"
+            [(ngModel)]="selectedQuarterList"
+            (onSelect)="onItemSelect($event, true)"
+            (onDeSelect)="onItemSelect($event, false)"
+          >
+          </ng-multiselect-dropdown>
+        </td>
+        <td></td>
+      </tr>
+      <td><button class="btn" (click)="onSubmit()" style="width: 200px">Inviter</button></td>
+    </table>
+  </div>
+</div>

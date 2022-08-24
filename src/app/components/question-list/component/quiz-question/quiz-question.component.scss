@@ -1,0 +1,17 @@
+li.ok::before {
+  content: '✓ ';
+}
+li.nok::before {
+  content: '✗ ';
+}
+.mat-row .mat-cell {
+}
+
+.mat-row:hover .mat-cell {
+  border-color: aliceblue;
+  background-color: aliceblue;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}

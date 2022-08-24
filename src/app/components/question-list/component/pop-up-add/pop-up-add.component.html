@@ -1,0 +1,13 @@
+<button mat-button (click)="onNoClick()" style="left: 390px">
+  <i class="glyphicon glyphicon-remove"></i>
+</button>
+<h2 style="text-align: center; color: cadetblue">Ajout Domaine</h2>
+<br /><br /><br /><br />
+<mat-form-field style="width: 100%" appearance="fill">
+  <mat-label>Domaine</mat-label>
+  <input matInput style="font-size: 15px" [(ngModel)]="name" />
+</mat-form-field>
+<br /><br /><br />
+<button type="button" style="margin-bottom: 10px; margin-left: 300px" class="btn btn-primary" (click)="save()">
+  Enregistrer
+</button>
